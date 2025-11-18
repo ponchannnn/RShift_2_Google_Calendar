@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "RShift to Google Calendar",
+    "version": "1.0.2",
+    "permissions": ["storage", "identity", "activeTab"],
+    "host_permissions": ["https://calendar.googleapis.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://*.rshift.jp/staffpage/*",
+          "https://*.rshift.jp/staffpage/"
+        ],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "oauth2": {
+    "client_id": "686981993663-3k0fc2gpipbg0qkkf4u8od1futfs2dg1.apps.googleusercontent.com",
+    "scopes":[
+      "https://www.googleapis.com/auth/calendar.events",
+      "https://www.googleapis.com/auth/userinfo.profile"
+      ]
+  },
+  "default_locale": "en",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtmADNUrmDd9fRH6pY+WK/543M1slJsO54ZUDJW9G3EBypXX2AaVPd0x9eeKsVY2g0CoELNct7mLQae20en250aXIrTrGmLE5VP+PsfW8fl8hPN62rG0Ms590D2nDq+mS7R8yPIaYz1X6FcoHciIF5GowYtS0Q0Enfe1b1mCGFggvoJ1QHqVI837tXRZ5SpyQg7TqdeVJoRC4xr30IPKjXJjY39aH/gNit0QWLfwzKLtOzHFgQsADkILCeSGqExr6tuDoycD6f69ONyNDbse0AAWBCltc5M6LoZzr/AF15FeblVwRVtvBy3ykEOXX5fC0X6xI56s9jC+cS9wVHYb2gQIDAQAB"
+}

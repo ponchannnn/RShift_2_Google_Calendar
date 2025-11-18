@@ -1,0 +1,98 @@
+{
+    "popupTitle": {
+      "message": "Google Calendar Settings"
+    },
+    "settingsTitle": {
+      "message": "RShift to Google Calendar"
+    },
+    "settingsSubTitle": {
+      "message": "Google Calendar Settings"
+    },
+    "calendarTitleLabel": {
+      "message": "Calendar Title:"
+    },
+    "calendarColorLabel": {
+      "message": "Calendar Color:"
+    },
+    "saveButton": {
+      "message": "Save"
+    },
+    "settingsSaved": {
+      "message": "Settings saved successfully."
+    },
+    "colorLavender": {
+      "message": "Lavender"
+    },
+    "colorSage": {
+      "message": "Sage"
+    },
+    "colorGrape": {
+      "message": "Grape"
+    },
+    "colorFlamingo": {
+      "message": "Flamingo"
+    },
+    "colorBanana": {
+      "message": "Banana"
+    },
+    "colorTangerine": {
+      "message": "Tangerine"
+    },
+    "colorPeacock": {
+      "message": "Peacock"
+    },
+    "colorGraphite": {
+      "message": "Graphite"
+    },
+    "colorBlueberry": {
+      "message": "Blueberry"
+    },
+    "colorBasil": {
+      "message": "Basil"
+    },
+    "colorTomato": {
+      "message": "Tomato"
+    },
+    "bulkAddButtonText": {
+      "message": "Bulk Add to Calendar"
+    },
+    "addToCalendarButtonText": {
+      "message": "Add"
+    },
+    "deleteFromCalendarButtonText": {
+      "message": "Delete"
+    },
+    "NoShiftButtonText": {
+      "message": "No Shift"
+    },
+    "adding": {
+      "message": "Adding"
+    },
+    "added": {
+      "message": "Added"
+    },
+    "failed": {
+      "message": "Failed"
+    },
+    "deleting": {
+      "message": "Deleting"
+    },
+    "deleteShiftFailed": {
+      "message": "Failed to delete shift. Please try again."
+    },
+    "allShiftsAdded": {
+      "message": "All shifts have been added."
+    },
+    "bulkAddResultFormat": {
+      "message": "{0}/{1} shifts added"
+    },
+    "existingEventFound": {
+      "message": "Existing event found: Title: {0}, Start Time: {1}, End Time: {2}. Mark this event as 'Added'?"
+    },
+    "addShiftFailed": {
+      "message": "Failed to add shift. Please try again."
+    },
+    "fetchEventsFailed": {
+      "message": "Failed to fetch existing events. Do you still want to add the shift?"
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "popupTitle": {
+      "message": "設定"
+    },
+    "settingsTitle": {
+      "message": "RShift to Google Calendar"
+    },
+    "settingsSubTitle": {
+      "message": "Googleカレンダー設定"
+    },
+    "calendarTitleLabel": {
+      "message": "カレンダーのタイトル:"
+    },
+    "calendarColorLabel": {
+      "message": "カレンダーの色:"
+    },
+    "saveButton": {
+      "message": "保存"
+    },
+    "settingsSaved": {
+      "message": "設定が正常に保存されました。"
+    },
+    "colorLavender": {
+      "message": "ラベンダー"
+    },
+    "colorSage": {
+      "message": "セージ"
+    },
+    "colorGrape": {
+      "message": "ブドウ"
+    },
+    "colorFlamingo": {
+      "message": "フラミンゴ"
+    },
+    "colorBanana": {
+      "message": "バナナ"
+    },
+    "colorTangerine": {
+      "message": "ミカン"
+    },
+    "colorPeacock": {
+      "message": "ピーコック"
+    },
+    "colorGraphite": {
+      "message": "グラファイト"
+    },
+    "colorBlueberry": {
+      "message": "ブルーベリー"
+    },
+    "colorBasil": {
+      "message": "バジル"
+    },
+    "colorTomato": {
+      "message": "トマト"
+    },
+    "bulkAddButtonText": {
+      "message": "一括追加"
+    },
+    "addToCalendarButtonText": {
+      "message": "カレンダー追加"
+    },
+    "deleteFromCalendarButtonText": {
+      "message": "カレンダー削除"
+    },
+    "NoShiftButtonText": {
+      "message": "予定なし"
+    },
+    "adding": {
+      "message": "追加中"
+    },
+    "added": {
+      "message": "追加済み"
+    },
+    "failed": {
+      "message": "失敗"
+    },
+    "deleting": {
+      "message": "削除中"
+    },
+    "deleteShiftFailed": {
+      "message": "シフトの削除に失敗しました。もう一度お試しください。"
+    },
+    "bulkAddResultFormat": {
+      "message": "{0}/{1} 件成功"
+    },
+    "allShiftsAdded": {
+      "message": "すべてのシフトが追加されました"
+    },
+    "existingEventFound": {
+      "message": "既存のイベントが見つかりました: タイトル: {0}, 開始時間: {1}, 終了時間: {2}。このイベントを「追加済み」にしますか？"
+    },
+    "addShiftFailed": {
+      "message": "シフトの追加に失敗しました。もう一度お試しください。"
+    },
+    "fetchEventsFailed": {
+      "message": "既存のイベントの取得に失敗しました。それでもシフトを追加しますか？"
+    }
+  }
