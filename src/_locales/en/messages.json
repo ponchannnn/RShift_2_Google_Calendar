@@ -8,6 +8,18 @@
     "settingsSubTitle": {
       "message": "Google Calendar Settings"
     },
+    "userInfo": {
+      "message": "Logged in as: "
+    },
+    "noUserLoggedIn": {
+      "message": "Not Logged-in"
+    },
+    "notLoggedIn": {
+      "message": "Any logged-in account does not exist"
+    },
+    "changeUser": {
+      "message": "Change User"
+    },
     "calendarTitleLabel": {
       "message": "Calendar Title:"
     },

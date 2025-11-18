@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title data-i18n="popupTitle">Settings</title>
+  <title class="i18n" data-i18n="popupTitle">Settings</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h1 data-i18n="settingsTitle">RShift to Google Calendar</h1>
-  <h2 data-i18n="settingsSubTitle">Google Calendar Settings</h2>
+    <div id="userInfo"></div> <!-- ユーザー情報を表示する要素 -->
+  <button id="switchAccountBtn" class="i18n" data-i18n="changeUser"></button> <!-- ユーザー変更ボタン -->
+  <h2 class="i18n" data-i18n="settingsTitle">Google Calendar Settings</h2>
   <form id="settingsForm">
     <label for="calendarTitle" data-i18n="calendarTitleLabel">Calendar Title:</label>
     <input type="text" id="calendarTitle" name="calendarTitle" required>

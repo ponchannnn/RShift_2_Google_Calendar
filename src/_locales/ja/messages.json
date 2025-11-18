@@ -8,6 +8,18 @@
     "settingsSubTitle": {
       "message": "Googleカレンダー設定"
     },
+    "userInfo": {
+      "message": "ログイン中のユーザー: "
+    },
+    "noUserLoggedIn": {
+      "message": "未ログイン"
+    },
+    "notLoggedIn": {
+      "message": "ログイン中のアカウントが存在しません"
+    },
+    "changeUser": {
+      "message": "ユーザー変更"
+    },
     "calendarTitleLabel": {
       "message": "カレンダーのタイトル:"
     },
