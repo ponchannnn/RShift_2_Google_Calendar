@@ -100,8 +100,18 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 function formatDateTime(dateText, time) {
-  const [year, month, day] = dateText.split('/').map(s => s.padStart(2, '0'));
-  const [hour, minute] = time.split(':').map(s => s.padStart(2, '0'));
+  if (!dateText || !time) {
+    throw new Error(`Missing date or time. Date: ${dateText}, Time: ${time}`);
+  }
+
+  const dateParts = dateText.split(/[-/]/);
+  const timeParts = time.split(':');
+
+  if (dateParts.length !== 3 || timeParts.length < 2) {
+    throw new Error(`Invalid format. Date: ${dateText}, Time: ${time}`);
+  }
+  const [year, month, day] = dateParts.map(s => s.padStart(2, '0'));
+  const [hour, minute] = timeParts.map(s => s.padStart(2, '0'));
 
   return `${year}-${month}-${day}T${hour}:${minute}:00`;
 }

@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "RShift to Google Calendar",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "permissions": ["storage", "identity", "activeTab"],
     "host_permissions": ["https://calendar.googleapis.com/*"],
     "background": {

@@ -1,15 +1,15 @@
-function ifDateGetDateText(dateElement, year) {
+function ifDateGetDateText(dateElement) {
   const spans = dateElement.querySelectorAll('span');
   if (spans.length !== 2) return null;
-  const monthDay = spans[0].textContent + spans[1].textContent;
-  return `${year}/${monthDay}`;
-}
+  const monthRaw = spans[0].textContent.trim().replace("/", '');
+  const dayRaw = spans[1].textContent.trim();
+  if (!/^\d{1,2}$/.test(monthRaw) || !/^\d{1,2}$/.test(dayRaw)) {
+    return null;
+  }
 
-function isValidDate(dateText) {
-  if (!dateText) return false;
-
-  const datePattern = /^\d{1,2}\/\d{1,2}$/;
-  return datePattern.test(dateText);
+  const month = monthRaw.padStart(2, '0');
+  const day = dayRaw.padStart(2, '0');
+  return [month, day];
 }
 
 function isValidShift(startTime, endTime) {
@@ -26,9 +26,9 @@ window.onload = function() {
   const headerNow = document.querySelector('.staffpage-plan-header-now');
   const headerText = headerNow ? headerNow.textContent : ''; // "2025/11/16(日)～..."
   const yearMatch = headerText.match(/^(\d{4})\//); // "2025/" にマッチ
-  
+
   // 年が取得できなかった場合のフォールバック（万が一のため）
-  const currentYear = yearMatch ? yearMatch[1] : new Date().getFullYear().toString();
+  let currentYear = yearMatch ? parseInt(yearMatch[1], 10) : new Date().getFullYear();
 
   // background から保存済みシフト一覧を取得
   chrome.runtime.sendMessage({ action: "getStoredShifts" }, (storedShiftsMap) => {
@@ -37,13 +37,29 @@ window.onload = function() {
 
     const shiftContainers = document.querySelectorAll('.pull-left');
 
+    let previousMonth = -1;
+
     shiftContainers.forEach(container => {
       const dateElement = container.querySelector('.staffpage-plan-list-day button');
       const shiftElement = container.querySelector('.staffpage-plan-list-shift button');
+      const shiftParent = container.querySelector('.staffpage-plan-list-shift');
 
       if (dateElement && shiftElement) {
-        const dateText = ifDateGetDateText(dateElement, currentYear);
-        
+        if (shiftParent) {
+            shiftParent.style.marginBottom = '0px';
+        }
+
+        const dateResult = ifDateGetDateText(dateElement);
+        if (!dateResult) return;
+
+        const [monthText, dayText] = dateResult;
+        const month = parseInt(monthText, 10);
+        if (previousMonth === 12 && month === 1) {
+            currentYear++;
+        }
+        previousMonth = month;
+
+        const dateText = `${currentYear}-${monthText}-${dayText}`;
         const shiftDetails = shiftElement.querySelector('p').innerHTML.trim();
         const [startTime, endTime] = shiftDetails.split('<br>').map(time => time.replace(/&nbsp;|\u00A0/g, '').trim());
 
@@ -82,8 +98,9 @@ function sendMessageAsync(message) {
 function createShiftButton(container, shiftData, shiftButtons) {
   const newDiv = document.createElement('div');
   newDiv.className = 'btn';
-  newDiv.style.width = '100%';
-  newDiv.style.margin = '0';
+  newDiv.style.width = '100px';
+  newDiv.style.marginBottom = '5px';
+  newDiv.style.display = 'block';
   newDiv.style.padding = '5px 0';
   newDiv.style.color = 'white';
   newDiv.style.textAlign = 'center';
